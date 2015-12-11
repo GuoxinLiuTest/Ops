@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Management System</title>
+  @Styles.Render("~/Content/css")
+</head>
+<body>
+  <!--  wrapper -->
+  <div id="wrapper">
+    <!-- navbar top -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+      <!-- navbar-header -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="default.aspx">
+          <h3 style="color:white;font-weight:bold">Employee Management System</h3>
+        </a>
+      </div>
+      <!-- end navbar-header -->
+      <!-- navbar-top-links -->
+      <ul class="nav navbar-top-links navbar-right">
+        <!-- main dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-2x"></i>
+          </a>
+          <!-- dropdown-messages -->
+          <ul class="dropdown-menu dropdown-messages">
+            <li>
+              <a href="#">
+                <div>
+                  <strong><span class=" label label-danger">System Message</span></strong>
+                  <span class="pull-right text-muted">
+                    <em>Yesterday</em>
+                  </span>
+                </div>
+                <div>Your vacation request has been approved...</div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <strong><span class=" label label-info">System Message</span></strong>
+                  <span class="pull-right text-muted">
+                    <em>Yesterday</em>
+                  </span>
+                </div>
+                <div>Your overtime request has been approved...</div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <div>
+                  <strong><span class=" label label-success">System Message</span></strong>
+                  <span class="pull-right text-muted">
+                    <em>Yesterday</em>
+                  </span>
+                </div>
+                <div>Your vacation request from 2017-01-01 - 2017-03-1 has been rejected...</div>
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a class="text-center" href="#">
+                <strong>Read All Messages</strong>
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- end dropdown-messages -->
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user fa-2x"></i>
+          </a>
+          <!-- dropdown user-->
+          <ul class="dropdown-menu dropdown-user">
+            <li>
+              <a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              @Html.ActionLink("Log Off", "LogOff", "Account")
+            </li>
+          </ul>
+          <!-- end dropdown-user -->
+        </li>
+        <!-- end main dropdown -->
+      </ul>
+      <!-- end navbar-top-links -->
+    </nav>
+    <!-- end navbar top -->
+    <!-- navbar side -->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+      <!-- sidebar-collapse -->
+      <div class="sidebar-collapse">
+        <!-- side-menu -->
+        <ul class="nav" id="side-menu">
+          <li>
+            <!-- user image section-->
+            <div class="user-section">
+              <div class="user-section-inner">
+                <img src="~/assets/img/user.jpg" alt="">
+              </div>
+              <div class="user-info">
+                <div>Admin</div>
+                <div class="user-text-online">
+                  <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                </div>
+              </div>
+            </div>
+            <!--end user image section-->
+          </li>
+          <li class="sidebar-search">
+            <!-- search section-->
+            <div class="input-group custom-search-form">
+              <input type="text" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+            <!--end search section-->
+          </li>
+          <li>
+            @Html.ActionLink("Dashboard", "Index", "Home")
+          </li>
+          <li>
+            @Html.ActionLink("Employee", "Index", "Storms")
+          </li>
+        </ul>
+        <!-- end side-menu -->
+      </div>
+      <!-- end sidebar-collapse -->
+    </nav>
+    <!-- end navbar side -->
+    @RenderBody()
+  </div>
+  <!-- end wrapper -->
+  @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
